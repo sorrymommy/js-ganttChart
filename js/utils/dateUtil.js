@@ -1,5 +1,5 @@
 export const dateUtil = {
-    getAddHour : function(date, hour){
+    getAddHour : function(date){
         let tempDate = new Date(date);
 
         return new Date(tempDate.getTime() + 60 * 60 * 1000);
@@ -54,11 +54,9 @@ export const dateUtil = {
 		const day   = date.getDate();
 		
 		const monthString = month < 10 ? `0${month}` : month;
-		const dayString = day < 10 ? `0${day}` : day;
+		const dayString   = day   < 10 ? `0${day}`   : day  ;
 		
-		const formattedDate = `${year}-${monthString}-${dayString}`;
-		
-		return formattedDate;
+		return `${year}-${monthString}-${dayString}`;
 	},
 
 	isSameDay : function(date1, date2){

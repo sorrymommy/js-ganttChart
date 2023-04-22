@@ -20,8 +20,8 @@ export const modelBuilder = {
 			let isFirstItem = index === 0;
 			let isLastItem = index === array.length-1;
 
-			let tempBeginDateTime = null; 
-			let tempEndDateTime   = null;
+			let tempBeginDateTime ;
+			let tempEndDateTime   ;
 	
 			if ( isFirstItem ){
 				tempBeginDateTime = new Date(beginDateTime);
@@ -53,7 +53,7 @@ export const modelBuilder = {
 
 		returnValues.map((item)=>{
 			item.beginMinute = item.beginDateTime.getMinutes();
-			item.endMinute = (item.endDateTime.getMinutes() == 0 ? 60 : item.endDateTime.getMinutes());
+			item.endMinute = (item.endDateTime.getMinutes() === 0 ? 60 : item.endDateTime.getMinutes());
 		});
 
 		return returnValues;
@@ -65,7 +65,7 @@ export const modelBuilder = {
 
 		returnValues.map((item)=>{
 			item.beginHour = item.beginDateTime.getHours();
-			item.endHour = (item.endDateTime.getHours() == 0 ? 24 : item.endDateTime.getHours());
+			item.endHour = (item.endDateTime.getHours() === 0 ? 24 : item.endDateTime.getHours());
 			item.minutes = this.getMinuteItems(item.beginDateTime, item.endDateTime);
 			item.minuteCount = item.minutes.length;
 		});
