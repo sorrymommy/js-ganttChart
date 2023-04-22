@@ -10,9 +10,9 @@ export default function GanttChartAxisDrawer(leftDataPanel){
                                 item.beginAltitude + "~" +
                                 (item.endAltitude == null? "" : item.endAltitude);
         });
-    };
+    }
 
     this.draw= function(axisItems){
         createAxisTag.call(this, axisItems);
-    };
+    }
 }

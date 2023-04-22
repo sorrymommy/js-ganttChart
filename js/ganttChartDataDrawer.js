@@ -18,7 +18,7 @@ export default function GanttChartDataDrawer(dataPanel, beginDateTime, endDateTi
                 return 100 + (25 * i);
         }
         return 0;
-    };
+    }
 
     function getHeight(dataItem){
         let height = 0;
@@ -39,7 +39,7 @@ export default function GanttChartDataDrawer(dataPanel, beginDateTime, endDateTi
                 height += 25;
         }
         return height;
-    };
+    }
 
     function getWidthAAA(beginDateTime, endDateTime){
         let minuteItems = dateUtil.getMinuteItems(beginDateTime, endDateTime);
@@ -48,16 +48,16 @@ export default function GanttChartDataDrawer(dataPanel, beginDateTime, endDateTi
 
         return (tagLocationCalculator.getMinuteHeaderWidth() * minuteItems.length);
         
-    };
+    }
     
-    this.draw=function(dataItems){
+    this.draw = function(dataItems){
         for(let i=0; i<dataItems.length; i++){
             let item = dataItems[i];
 
             let tempTag = tagBuilder.create(dataPanel, "div", "ganttOption");
             tempTag.innerText = item.beginAltitude + "~" + item.endAltitude;
-            tempTag.style.left  = getWidthAAA.call(this, this._beginDateTime, item.beginDateTime);
-            tempTag.style.width = getWidthAAA.call(this, item.beginDateTime, item.endDateTime);
+            tempTag.style.left  = getWidthAAA.call(this, this._beginDateTime , item.beginDateTime);
+            tempTag.style.width = getWidthAAA.call(this, item.beginDateTime  , item.endDateTime  );
 
             tempTag.style.top    = getTop.call(this, item );
             tempTag.style.height = getHeight.call(this, item );

@@ -10,7 +10,7 @@ export default function GanttChartHeaderDrawer(headerTag) {
 		let tempTag = tagBuilder.create(duarationTag, "div", "headItemDuration");
 
         tempTag.style.width = tagLocationCalculator.getDurationHeaderWidth(dayItems);
-	};
+	}
 
 	function createDaysTag(daysTag, dayItems){
 		dayItems.map((item)=>{
@@ -19,7 +19,7 @@ export default function GanttChartHeaderDrawer(headerTag) {
             tempTag.style.width = tagLocationCalculator.getDayHeaderWidth(item);
 			tempTag.innerText = dateUtil.getYMDString(item.date);
 		});
-	};
+	}
 
 	function createHoursTag(hoursTag, dayItems){
         dayItems.map((item)=>{
@@ -30,7 +30,7 @@ export default function GanttChartHeaderDrawer(headerTag) {
                 tempTag.innerText = hourItem.beginHour + "~" + hourItem.endHour;
             });
         })
-	};
+	}
 	function createMinutesTag(minutesTag, dayItems){
         dayItems.map((item)=>{
             item.hours.map((hourItem)=>{
@@ -42,7 +42,7 @@ export default function GanttChartHeaderDrawer(headerTag) {
                 });
             });
         });
-	};
+	}
 
     this.draw = function(beginDateTime, endDateTime){
         tagBuilder.removeChildAll(this._headerTag);

@@ -4,10 +4,10 @@ export const modelBuilder = {
 	getItems:function(array, beginDateTime, endDateTime){
 		let returnValues = [];
 
-		if (array.length == 0)
+		if (array.length === 0)
 			return returnValues;
 		
-		if (array.length == 1){
+		if (array.length === 1){
 			returnValues.push({
 				beginDateTime: new Date(beginDateTime),
 				endDateTime: new Date(endDateTime)

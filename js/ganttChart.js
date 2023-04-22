@@ -9,7 +9,7 @@ export default function GanttChart(_ganttChartDivTag){
     this._ganttChartDivTag = _ganttChartDivTag;
 
     function createNode(item){
-        if (item.node == undefined){
+        if (item.node === undefined){
             return tagBuilder.create(item.parentNode, item.tagName, item.className);
         }
         return item.node;

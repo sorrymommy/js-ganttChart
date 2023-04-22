@@ -2,7 +2,7 @@ export const tagBuilder = {
 	create : function(parentTag, tagName, classNames){
 		let tag = document.createElement(tagName);
 
-		if (classNames != undefined && classNames != ""){
+		if (classNames !== undefined && classNames !== ""){
 			let classNameArray = classNames.split(" ");
 
 			classNameArray.map((item)=>{
