@@ -1,0 +1,160 @@
+.fn-content {
+    overflow: hidden;
+    position: relative;
+  
+}
+
+.leftPanel {
+    float: left;
+    width: 300px;
+    border-right: 1px solid #808080;
+    position: relative;
+    z-index: 20;
+    height:700px;
+}
+
+.leftPanel .row {
+    border-bottom: 1px solid #DDD;
+	text-overflow: ellipsis;
+}
+
+.leftDataPanel {
+    line-height: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+    color: #130a0a !important;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0;
+ 
+}
+
+.dataGroup {
+    line-height: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+    color: #ffffff !important;
+    font-size: 13px;
+    letter-spacing: 0;
+    height:700px;
+}
+
+
+ .name, .desc {
+    float: left;
+    height: 24px;
+    width: 100%;
+    background-color: #f6f6f6;
+}
+
+.spacer {
+    height: 99px;
+}
+
+
+
+
+.dataPanel {
+    margin-left: 0;
+    outline: 1px solid #DDD;
+ 
+    /*
+    background-image: url(./img/gantt/grid.png);
+    */
+    background-repeat: repeat;
+    position: relative;
+	overflow: hidden;
+	overflow-x: auto;
+     width: 1100px;	
+}
+
+.headGroupRow {
+	width: 2015px;
+}
+
+.headerRow {
+    margin-right: -1px; 
+}
+
+.bar .fn-label {
+    line-height: 25px;
+    font-weight: bold;
+    white-space: nowrap;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+    color: #ffffff !important;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0;
+}
+
+
+.headItemDuration {
+    float: left;
+    border-right: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    height: 24px;
+    background-color: #f6f6f6;
+    font-weight: 700;
+    font-size: 13px;
+    color: #000000;
+    text-align: center;
+	width: 2015px;
+}
+
+.headItemDay {
+    float: left;
+    border-right: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    height: 24px;
+    background-color: #f6f6f6;
+    font-weight: 700;
+    font-size: 13px;
+    color: #000000;
+    text-align: center;
+	width: 2015px;
+}
+
+.headItemHour {
+    float: left;
+    border-right: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    height: 24px;
+    background-color: #9cbe3e;
+    font-weight: 700;
+    font-size: 13px;
+    color: #000000;
+    text-align: center;
+	width: 83px;
+}
+
+.headItemMinute {
+    float: left;
+    border-right: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    height: 24px;
+    background-color: #f6f6f6;
+    font-weight: 700;
+    font-size: 3px;
+    color: #000000;
+    text-align: center;
+	width: 20px;
+}
+
+.ganttOption {
+	white-space:nowrap;
+    background-color: orange;
+    position: absolute;
+   
+}
+
