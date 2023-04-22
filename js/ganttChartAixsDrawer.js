@@ -1,4 +1,6 @@
-function GanttChartAxisDrawer(leftDataPanel){
+import { tagBuilder } from "./utils/tagBuilder.js";
+
+export default function GanttChartAxisDrawer(leftDataPanel){
     this._leftDataPanel = leftDataPanel;
 
     function createAxisTag(axisItems){
@@ -14,4 +16,3 @@ function GanttChartAxisDrawer(leftDataPanel){
         createAxisTag.call(this, axisItems);
     };
 }
-

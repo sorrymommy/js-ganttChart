@@ -1,4 +1,4 @@
-const dateUtil = {
+export const dateUtil = {
     getAddHour : function(date, hour){
         let tempDate = new Date(date);
 

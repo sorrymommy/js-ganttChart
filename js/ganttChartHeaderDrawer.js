@@ -1,4 +1,9 @@
-function GanttChartHeaderDrawer(headerTag) {
+import {tagBuilder} from "./utils/tagBuilder.js";
+import {tagLocationCalculator} from "./utils/tagLocationCalculator.js";
+import {dateUtil} from "./utils//dateUtil.js";
+import { modelBuilder } from "./utils/modelBuilder.js";
+
+export default function GanttChartHeaderDrawer(headerTag) {
     this._headerTag = headerTag;
 
 	function createDurationTag(duarationTag, dayItems){

@@ -1,4 +1,6 @@
-function drawChart(){
+import GanttChart from "./ganttChart.js";
+
+export function drawChart(){
     const beginDate = "2023-04-09 08:00:00";
     const endDate   = "2023-04-12 05:00:00";
 

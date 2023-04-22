@@ -1,4 +1,11 @@
-function GanttChart(_ganttChartDivTag){
+import GanttChartAxisDrawer from "./ganttChartAixsDrawer.js";
+import GanttChartDataDrawer from "./ganttChartDataDrawer.js";
+import GanttChartHeaderDrawer from "./ganttChartHeaderDrawer.js";
+import { tagBuilder } from "./utils/tagBuilder.js";
+import { tagNames } from "./global/tagNames.js";
+import { classNames } from "./global/classNames.js";
+
+export default function GanttChart(_ganttChartDivTag){
     this._ganttChartDivTag = _ganttChartDivTag;
 
     function createNode(item){
@@ -43,30 +50,4 @@ function GanttChart(_ganttChartDivTag){
         this.drawAxis(axisItems);
         this.drawData(dataItems);
     }
-}
-
-const tagNames = {
-    div: "div",
-}
-
-const classNameBuilder = {
-    build: function(...classNames){
-        let result = "";
-
-        classNames.map((item)=>{
-            result += item + " ";
-        });
-
-        return result;
-    }
-}
-
-const classNames = {
-    empty: "",
-    leftPanel: "leftPanel",
-    spacer: "spacer",
-    leftDataPanel: "leftDataPanel",
-    dataPanel: "dataPanel",
-    headerGroup: "headerGroupRow",
-    dataGroup: "dataGroup",
 }

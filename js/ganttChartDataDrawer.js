@@ -1,4 +1,8 @@
-function GanttChartDataDrawer(dataPanel, beginDateTime, endDateTime, _axisItems){
+import { dateUtil } from "./utils/dateUtil.js";
+import { tagBuilder } from "./utils/tagBuilder.js";
+import { tagLocationCalculator } from "./utils/tagLocationCalculator.js";
+
+export default function GanttChartDataDrawer(dataPanel, beginDateTime, endDateTime, _axisItems){
     this._dataPanel = dataPanel;
     this._beginDateTime = beginDateTime;
     this._endDateTime = endDateTime;
@@ -24,14 +28,14 @@ function GanttChartDataDrawer(dataPanel, beginDateTime, endDateTime, _axisItems)
             axisItem.endAltitude = (axisItem.endAltitude == null ? 100000000 : axisItem.endAltitude);
             axisItem.endAltitude = axisItem.endAltitude - 1;
 
-            let isAixsItemBegin   = ( axisItem.beginAltitude <= dataItem.beginAltitude &&
+            let isInAxisBegnRange = ( axisItem.beginAltitude <= dataItem.beginAltitude &&
                                       axisItem.endAltitude   >= dataItem.beginAltitude );
-            let isAixsItemEnd     = ( axisItem.beginAltitude <= dataItem.endAltitude   &&
+            let isInAxisEndRange  = ( axisItem.beginAltitude <= dataItem.endAltitude   &&
                                       axisItem.endAltitude   >= dataItem.endAltitude   );
-            let isAixsItemBetween = ( axisItem.beginAltitude >= dataItem.beginAltitude &&
+            let isInAxisBetween = ( axisItem.beginAltitude >= dataItem.beginAltitude &&
                                       axisItem.endAltitude   <= dataItem.endAltitude   );
 
-            if ( isAixsItemBegin || isAixsItemBetween || isAixsItemEnd )
+            if ( isInAxisBegnRange || isInAxisBetween || isInAxisEndRange )
                 height += 25;
         }
         return height;
@@ -42,9 +46,7 @@ function GanttChartDataDrawer(dataPanel, beginDateTime, endDateTime, _axisItems)
         let hoursItems  = dateUtil.getHourItems(beginDateTime, endDateTime);
         let dayItems    = dateUtil.getDayItems(beginDateTime, endDateTime);
 
-        return (tagLocationCalculator.getMinuteHeaderWidth() * minuteItems.length) +
-               (hoursItems.length > 0 ? 0 : hoursItems.length - 1 ) + 
-               (dayItems.length   > 0 ? 0 : dayItems.length   - 1 );
+        return (tagLocationCalculator.getMinuteHeaderWidth() * minuteItems.length);
         
     };
     

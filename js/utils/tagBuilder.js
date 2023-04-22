@@ -1,4 +1,4 @@
-const tagBuilder = {
+export const tagBuilder = {
 	create : function(parentTag, tagName, classNames){
 		let tag = document.createElement(tagName);
 

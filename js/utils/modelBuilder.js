@@ -1,4 +1,6 @@
-const modelBuilder = {
+import { dateUtil } from "./dateUtil.js";
+
+export const modelBuilder = {
 	getItems:function(array, beginDateTime, endDateTime){
 		let returnValues = [];
 
